@@ -12,6 +12,8 @@ import (
 const INPUT = "input.txt"
 
 func main() {
+	// test case description for task2 in aoc is wrong. They made a mistake.
+	// The correct result for input_test.txt = 105
 	solvePuzzle2()
 
 }
