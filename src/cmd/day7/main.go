@@ -73,16 +73,18 @@ func testEngine(expected int, inputs []int, calculations []byte) bool {
 func generateCombinations(length int, states []byte) [][]byte {
 	var combinations [][]byte
 
-	// Backtracking-Funktion
+	// Backtracking-function
 	var backtrack func(current []byte)
 	backtrack = func(current []byte) {
 		if len(current) == length {
-			// Eine Kopie von `current` hinzufügen
+			// create a copy of the current object to detach
 			temp := make([]byte, len(current))
 			copy(temp, current)
 			combinations = append(combinations, temp)
 			return
 		}
+
+		// I dont really understand how this part works.
 		for _, state := range states {
 			current = append(current, state)   // Zustand hinzufügen
 			backtrack(current)                 // Rekursion
